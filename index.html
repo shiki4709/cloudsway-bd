@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>US Growth & BD Proposal — Cloudsway</title>
+<title>US Growth & BD — Cloudsway</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -11,75 +11,71 @@
     font-family: 'Inter', -apple-system, sans-serif;
     background: #fff;
     color: #1a1a1a;
-    line-height: 1.55;
+    line-height: 1.6;
     max-width: 8.5in;
     margin: 0 auto;
     padding: 48px 56px;
   }
   @media print {
     body { padding: 0.5in 0.6in; }
-    .page-break { page-break-before: always; }
   }
 
   .header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 28px;
-    padding-bottom: 18px;
+    margin-bottom: 32px;
+    padding-bottom: 16px;
     border-bottom: 2px solid #111;
   }
-  .header h1 { font-size: 22px; font-weight: 800; line-height: 1.2; }
-  .header .subtitle { font-size: 13px; color: #666; margin-top: 4px; }
-  .header .meta { text-align: right; font-size: 12px; color: #888; }
-  .header .meta strong { color: #333; }
+  .header h1 { font-size: 20px; font-weight: 800; line-height: 1.2; }
+  .header .subtitle { font-size: 12px; color: #666; margin-top: 4px; }
+  .header .meta { text-align: right; font-size: 11px; color: #888; }
 
   h2 {
-    font-size: 14px; font-weight: 700; text-transform: uppercase;
-    letter-spacing: 1.5px; color: #111; margin: 28px 0 10px;
+    font-size: 13px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1.5px; color: #111; margin: 32px 0 12px;
     padding-bottom: 4px; border-bottom: 1px solid #ddd;
   }
-  h3 { font-size: 13px; font-weight: 700; color: #333; margin: 12px 0 6px; }
+  h3 { font-size: 13px; font-weight: 700; color: #333; margin: 14px 0 6px; }
   p, li { font-size: 12.5px; color: #333; }
   p { margin-bottom: 8px; }
   ul { padding-left: 18px; margin-bottom: 10px; }
-  li { margin-bottom: 4px; }
+  li { margin-bottom: 5px; }
   strong { color: #111; }
-  .accent { color: #0ea5e9; font-weight: 600; }
 
-  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 12px 0; }
-  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin: 12px 0; }
+  .big-quote {
+    font-size: 15px;
+    font-weight: 600;
+    color: #111;
+    line-height: 1.5;
+    margin: 16px 0 20px;
+    padding-left: 16px;
+    border-left: 3px solid #0ea5e9;
+  }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 12px 0; }
 
   .card {
     background: #f8f9fa; border: 1px solid #e5e7eb;
-    border-radius: 8px; padding: 14px 16px; margin-bottom: 10px;
+    border-radius: 8px; padding: 16px 18px;
   }
   .card h3 { margin-top: 0; font-size: 12.5px; }
   .card p, .card li { font-size: 11.5px; }
-  .card-accent { background: #f0f7ff; border: 1px solid #bae0fd; }
-  .card-dark {
-    background: #111; border: 1px solid #333; color: #ccc;
-  }
-  .card-dark h3 { color: #fff; }
-  .card-dark p, .card-dark li { color: #bbb; }
-  .card-dark strong { color: #fff; }
 
-  .icp-card {
-    border: 2px solid #0ea5e9; border-radius: 10px;
-    padding: 18px 20px; margin-bottom: 16px;
-    position: relative;
+  .pillar {
+    border-radius: 8px; padding: 16px 18px; margin-bottom: 12px;
   }
-  .icp-card .icp-tag {
-    position: absolute; top: -11px; left: 16px;
-    background: #0ea5e9; color: #fff; font-size: 10px;
-    font-weight: 700; padding: 3px 12px; border-radius: 10px;
-    letter-spacing: 0.5px; text-transform: uppercase;
+  .pillar-primary { background: #f0f7ff; border: 1px solid #bae0fd; }
+  .pillar-secondary { background: #f8f9fa; border: 1px solid #e5e7eb; }
+  .pillar .pillar-label {
+    font-size: 9.5px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; margin-bottom: 6px;
   }
-  .icp-card h3 { margin-top: 6px; font-size: 14px; }
-  .icp-secondary { border-color: #94a3b8; }
-  .icp-secondary .icp-tag { background: #64748b; }
-  .icp-tertiary { border-color: #a78bfa; }
-  .icp-tertiary .icp-tag { background: #7c3aed; }
+  .pillar-primary .pillar-label { color: #0ea5e9; }
+  .pillar-secondary .pillar-label { color: #888; }
+  .pillar h3 { margin-top: 0; }
+  .pillar p, .pillar li { font-size: 11.5px; }
 
   table {
     width: 100%; border-collapse: collapse;
@@ -88,1130 +84,254 @@
   th {
     text-align: left; font-size: 10px; font-weight: 700;
     text-transform: uppercase; letter-spacing: 0.5px; color: #666;
-    padding: 6px 10px; border-bottom: 1px solid #ddd; background: #f8f9fa;
+    padding: 8px 10px; border-bottom: 1px solid #ddd; background: #f8f9fa;
   }
-  td { padding: 6px 10px; border-bottom: 1px solid #eee; color: #333; }
+  td { padding: 8px 10px; border-bottom: 1px solid #eee; color: #333; }
   td:first-child { font-weight: 500; color: #111; }
 
-  .metrics {
-    display: grid; grid-template-columns: repeat(5, 1fr);
-    gap: 12px; margin: 12px 0 16px;
-  }
-  .metric {
-    text-align: center; background: #f0f7ff;
-    border-radius: 8px; padding: 12px 8px;
-  }
-  .metric .num { font-size: 20px; font-weight: 800; color: #0ea5e9; }
-  .metric .label {
-    font-size: 9.5px; color: #666; text-transform: uppercase;
-    letter-spacing: 0.5px; margin-top: 2px;
-  }
-
   .callout {
-    background: #f0f7ff; border-left: 3px solid #0ea5e9;
-    padding: 12px 16px; margin: 14px 0; border-radius: 0 6px 6px 0;
+    background: #111; color: #fff; border-radius: 8px;
+    padding: 16px 20px; margin: 16px 0;
   }
-  .callout p { font-size: 12px; margin: 0; }
-
-  .hero-problem {
-    background: #111; color: #fff; border-radius: 10px;
-    padding: 20px 24px; margin: 14px 0 20px;
-  }
-  .hero-problem h3 { color: #fff; font-size: 15px; margin: 0 0 8px; }
-  .hero-problem p { color: #ccc; font-size: 12.5px; margin-bottom: 6px; }
+  .callout p { color: #ccc; font-size: 12px; margin: 0; }
+  .callout strong { color: #fff; }
 
   .footer {
-    margin-top: 28px; padding-top: 14px; border-top: 1px solid #ddd;
+    margin-top: 36px; padding-top: 14px; border-top: 1px solid #ddd;
     font-size: 11px; color: #999; display: flex; justify-content: space-between;
   }
 
-  .tag {
-    display: inline-block; font-size: 9.5px; font-weight: 600;
-    padding: 2px 8px; border-radius: 4px; margin-right: 4px;
-    text-transform: uppercase; letter-spacing: 0.3px;
+  .timeline {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin: 12px 0;
   }
-  .tag-p0 { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
-  .tag-p1 { background: #f0f7ff; color: #0ea5e9; border: 1px solid #bae0fd; }
-  .tag-p2 { background: #f8f9fa; color: #666; border: 1px solid #e5e7eb; }
-  .tag-vertical { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
-  .tag-infra { background: #ede9fe; color: #6d28d9; border: 1px solid #c4b5fd; }
-  .tag-leader { background: #dcfce7; color: #166534; border: 1px solid #86efac; }
-  .tag-threat { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
-  .tag-weak { background: #f8f9fa; color: #666; border: 1px solid #e5e7eb; }
-  .tag-dead { background: #374151; color: #9ca3af; border: 1px solid #4b5563; }
-  .tag-cloudsway { background: #0ea5e9; color: #fff; border: 1px solid #0284c7; }
+  .timeline-block {
+    border-left: 3px solid #0ea5e9; padding-left: 14px;
+  }
+  .timeline-block.secondary { border-left-color: #94a3b8; }
+  .timeline-block h3 { font-size: 12px; margin: 0 0 6px; }
+  .timeline-block li { font-size: 11px; margin-bottom: 3px; }
 
-  .product-header {
-    border: 2px solid #0ea5e9; border-radius: 10px;
-    padding: 18px 22px; margin: 16px 0 14px; position: relative;
+  .engagement-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 12px 0;
   }
-  .product-header .product-tag {
-    position: absolute; top: -11px; left: 16px;
-    background: #0ea5e9; color: #fff; font-size: 10px;
-    font-weight: 700; padding: 3px 12px; border-radius: 10px;
-    letter-spacing: 0.5px; text-transform: uppercase;
-  }
-  .product-header h3 { margin-top: 4px; font-size: 15px; color: #0ea5e9; }
-  .product-sky { border-color: #7c3aed; }
-  .product-sky .product-tag { background: #7c3aed; }
-  .product-sky h3 { color: #7c3aed; }
-  .product-gpu { border-color: #f59e0b; }
-  .product-gpu .product-tag { background: #f59e0b; }
-  .product-gpu h3 { color: #d97706; }
-  .product-sandbox { border-color: #10b981; }
-  .product-sandbox .product-tag { background: #10b981; }
-  .product-sandbox h3 { color: #059669; }
-
-  .icp-box {
-    background: #111; color: #fff; border-radius: 10px;
-    padding: 16px 20px; margin: 12px 0;
-  }
-  .icp-box h3 { color: #fff; font-size: 13px; margin: 0 0 8px; }
-  .icp-box p { color: #ccc; font-size: 11.5px; }
-  .icp-box strong { color: #fff; }
-
-  .vp-box {
-    background: #f0fdf4; border: 1px solid #86efac;
-    border-radius: 8px; padding: 14px 16px; margin: 10px 0;
-  }
-  .vp-box h3 { color: #166534; margin-top: 0; font-size: 12px; }
-  .vp-box p, .vp-box li { font-size: 11.5px; color: #166534; }
-
-  .score-table td { text-align: center; font-size: 11px; }
-  .score-table td:first-child { text-align: left; }
-  .s-high { color: #0ea5e9; font-weight: 700; }
-  .s-mid { color: #f59e0b; font-weight: 600; }
-  .s-low { color: #ef4444; font-weight: 600; }
-  .s-best { color: #0ea5e9; font-weight: 800; background: #f0f7ff; }
-
-  /* Positioning map */
-  .pos-map {
-    position: relative; width: 100%; height: 320px;
-    background: #fafafa; border: 1px solid #e5e7eb; border-radius: 10px;
-    margin: 14px 0 16px; overflow: hidden;
-  }
-  .pos-map .axis-x, .pos-map .axis-y {
-    position: absolute; font-size: 8.5px; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 1px; color: #aaa;
-  }
-  .pos-map .axis-x { bottom: 6px; left: 50%; transform: translateX(-50%); }
-  .pos-map .axis-y { top: 50%; left: 6px; transform: rotate(-90deg) translateX(-50%); transform-origin: left center; }
-  .pos-map .axis-x-label-l { position:absolute; bottom:6px; left:12px; font-size:8px; color:#ccc; }
-  .pos-map .axis-x-label-r { position:absolute; bottom:6px; right:12px; font-size:8px; color:#ccc; }
-  .pos-map .axis-y-label-t { position:absolute; top:8px; left:12px; font-size:8px; color:#ccc; }
-  .pos-map .axis-y-label-b { position:absolute; bottom:22px; left:12px; font-size:8px; color:#ccc; }
-  .pos-map .grid-line-h { position:absolute; left:0; right:0; top:50%; border-top:1px dashed #e5e7eb; }
-  .pos-map .grid-line-v { position:absolute; top:0; bottom:0; left:50%; border-left:1px dashed #e5e7eb; }
-  .pos-dot {
-    position: absolute; transform: translate(-50%, -50%);
-    font-size: 9px; font-weight: 600; padding: 3px 8px;
-    border-radius: 10px; white-space: nowrap; border: 1px solid;
-    line-height: 1.2;
-  }
-  .pos-dot.cloudsway {
-    background: #0ea5e9; color: #fff; border-color: #0284c7;
-    font-weight: 800; z-index: 10; padding: 4px 10px; font-size: 10px;
-  }
-  .pos-dot.threat { background: #fef2f2; color: #dc2626; border-color: #fecaca; }
-  .pos-dot.neutral { background: #f8f9fa; color: #666; border-color: #e5e7eb; }
-  .pos-dot.dead { background: #374151; color: #9ca3af; border-color: #4b5563; }
-  .pos-dot.leader { background: #dcfce7; color: #166534; border-color: #86efac; }
-
-  /* Compact competitor table */
-  .comp-table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 10.5px; }
-  .comp-table th {
-    text-align: left; font-size: 9px; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.5px; color: #888;
-    padding: 5px 8px; border-bottom: 1px solid #ddd; background: #f8f9fa;
-  }
-  .comp-table td { padding: 5px 8px; border-bottom: 1px solid #f0f0f0; color: #444; vertical-align: top; }
-  .comp-table td:first-child { font-weight: 600; color: #111; white-space: nowrap; }
-  .comp-table .row-cs { background: #f0f7ff; }
-  .comp-table .row-cs td { color: #0369a1; font-weight: 600; }
-
-  /* ── Interactive: sticky nav ── */
-  .sticky-nav {
-    position: sticky; top: 0; z-index: 100;
-    background: rgba(255,255,255,0.95); backdrop-filter: blur(8px);
-    border-bottom: 1px solid #e5e7eb;
-    padding: 8px 0; margin: 0 -56px; padding-left: 56px; padding-right: 56px;
-    display: flex; gap: 4px; flex-wrap: wrap; align-items: center;
-  }
-  .sticky-nav a {
-    font-size: 10px; font-weight: 600; padding: 4px 10px;
-    border-radius: 6px; text-decoration: none; color: #666;
-    border: 1px solid #e5e7eb; background: #fff;
-    transition: all 0.15s;
-  }
-  .sticky-nav a:hover, .sticky-nav a.active {
-    background: #0ea5e9; color: #fff; border-color: #0ea5e9;
-  }
-  .sticky-nav .nav-sep {
-    width: 1px; height: 16px; background: #ddd; margin: 0 4px;
-  }
-
-  /* ── Interactive: collapsible sections ── */
-  .section {
-    border: 1px solid #e5e7eb; border-radius: 10px;
-    margin: 12px 0; overflow: hidden;
-    transition: box-shadow 0.2s;
-  }
-  .section:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
-  .section-header {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 14px 18px; cursor: pointer; user-select: none;
-    background: #f8f9fa; border-bottom: 1px solid transparent;
-    transition: background 0.15s;
-  }
-  .section-header:hover { background: #f0f7ff; }
-  .section-header h2 {
-    margin: 0; padding: 0; border: none;
-    font-size: 13px; letter-spacing: 1.2px;
-  }
-  .section-chevron {
-    font-size: 14px; color: #999; transition: transform 0.2s;
-    flex-shrink: 0; margin-left: 12px;
-  }
-  .section.open .section-chevron { transform: rotate(180deg); }
-  .section.open .section-header { border-bottom-color: #e5e7eb; }
-  .section-body {
-    max-height: 0; overflow: hidden;
-    transition: max-height 0.35s ease;
-    padding: 0 18px;
-  }
-  .section.open .section-body {
-    max-height: 5000px; padding: 16px 18px;
-  }
-
-  /* ── Interactive: product tabs ── */
-  .tab-bar {
-    display: flex; gap: 0; margin: 14px 0 0; border-bottom: 2px solid #e5e7eb;
-  }
-  .tab-btn {
-    padding: 8px 16px; font-size: 11px; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.5px;
-    color: #888; background: none; border: none;
-    cursor: pointer; border-bottom: 2px solid transparent;
-    margin-bottom: -2px; transition: all 0.15s;
-  }
-  .tab-btn:hover { color: #333; }
-  .tab-btn.active { color: #0ea5e9; border-bottom-color: #0ea5e9; }
-  .tab-btn[data-tab="skyrouter"].active { color: #7c3aed; border-bottom-color: #7c3aed; }
-  .tab-btn[data-tab="gpu"].active { color: #d97706; border-bottom-color: #d97706; }
-  .tab-btn[data-tab="sandbox"].active { color: #059669; border-bottom-color: #059669; }
-  .tab-panel { display: none; padding-top: 4px; }
-  .tab-panel.active { display: block; }
-
-  @media print {
-    .sticky-nav { display: none; }
-    .section-body { max-height: none !important; padding: 16px 18px !important; }
-    .section-chevron { display: none; }
-    .tab-panel { display: block !important; }
-  }
+  .eng-item { padding: 14px 0; border-bottom: 1px solid #eee; }
+  .eng-item:last-child { border-bottom: none; }
+  .eng-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #888; margin-bottom: 4px; }
+  .eng-value { font-size: 14px; font-weight: 600; color: #111; }
+  .eng-note { font-size: 11px; color: #666; margin-top: 2px; }
 </style>
 </head>
 <body>
 
 <div class="header">
   <div>
-    <h1>How I'd Build Cloudsway's US Pipeline</h1>
-    <div class="subtitle">Growth & Business Development — North America</div>
+    <h1>US Growth & BD — Cloudsway</h1>
+    <div class="subtitle">Seed the US market. Build relationships. Warm the pipeline.</div>
   </div>
   <div class="meta">
-    <strong>Haruka T.</strong><br>
-    May 2026
+    Haruka T.<br>
+    June 2026
   </div>
 </div>
 
-<nav class="sticky-nav">
-  <a href="#s-lineup">Products</a>
-  <a href="#s-insight">Insight</a>
-  <a href="#s-pillars">3 Pillars</a>
-  <a href="#s-partners">Partners</a>
-  <a href="#s-outbound">Outbound</a>
-  <a href="#s-automation">Automation</a>
-  <a href="#s-30days">30 Days</a>
-  <div class="nav-sep"></div>
-  <a href="#s-intel">Competitive Intel</a>
-  <a href="#s-summary">Summary</a>
-</nav>
+<!-- SECTION 1 -->
+<h2>1. The Opportunity</h2>
 
-<!-- ═══ EXECUTIVE SUMMARY — ONE SCREEN ═══ -->
-<div style="margin:20px 0 28px;">
-
-<!-- Row 1: The thesis -->
-<div style="background:#111;border-radius:12px;padding:20px 24px;margin-bottom:14px;">
-  <p style="color:#0ea5e9;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px;">The Thesis</p>
-  <p style="color:#fff;font-size:16px;font-weight:700;line-height:1.4;margin-bottom:6px;">Every AI agent needs web data. But "relevant" isn't enough anymore — the market needs "trustworthy."</p>
-  <p style="color:#999;font-size:12px;margin:0;">Cloudsway's search API scores source credibility — it tells agents which results they can safely cite. No competitor does this. That's the wedge into legal, medical, and financial AI where a wrong source is a lawsuit.</p>
-</div>
-
-<!-- Row 2: 4 products, one line each -->
-<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-bottom:14px;">
-  <div style="background:#f0f7ff;border:2px solid #0ea5e9;border-radius:8px;padding:10px 12px;text-align:center;">
-    <p style="font-size:11px;font-weight:800;color:#0ea5e9;margin-bottom:2px;">SmartSearch</p>
-    <p style="font-size:9.5px;color:#555;margin:0;">Search API with trust scoring</p>
-    <p style="font-size:9px;color:#0ea5e9;font-weight:700;margin:4px 0 0;">WEDGE &rarr; $5/1K req</p>
-  </div>
-  <div style="background:#faf5ff;border:1px solid #c4b5fd;border-radius:8px;padding:10px 12px;text-align:center;">
-    <p style="font-size:11px;font-weight:800;color:#7c3aed;margin-bottom:2px;">Skyrouter</p>
-    <p style="font-size:9.5px;color:#555;margin:0;">One API for all AI models</p>
-    <p style="font-size:9px;color:#7c3aed;font-weight:700;margin:4px 0 0;">UPSELL &rarr; 100+ models</p>
-  </div>
-  <div style="background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:10px 12px;text-align:center;">
-    <p style="font-size:11px;font-weight:800;color:#d97706;margin-bottom:2px;">GPU Cloud</p>
-    <p style="font-size:9.5px;color:#555;margin:0;">Multi-cloud GPU rental</p>
-    <p style="font-size:9px;color:#d97706;font-weight:700;margin:4px 0 0;">UPSELL &rarr; from $150/mo</p>
-  </div>
-  <div style="background:#ecfdf5;border:1px solid #6ee7b7;border-radius:8px;padding:10px 12px;text-align:center;">
-    <p style="font-size:11px;font-weight:800;color:#059669;margin-bottom:2px;">Agent Sandbox</p>
-    <p style="font-size:9.5px;color:#555;margin:0;">Safe room for AI to work in</p>
-    <p style="font-size:9px;color:#059669;font-weight:700;margin:4px 0 0;">FUTURE &rarr; emerging</p>
-  </div>
-</div>
-
-<!-- Row 3: The play -->
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;">
-  <div style="background:#f8f9fa;border:1px solid #e5e7eb;border-radius:8px;padding:12px 14px;">
-    <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#999;margin-bottom:4px;">The Window</p>
-    <p style="font-size:20px;font-weight:800;color:#dc2626;margin-bottom:2px;">Tavily acquired</p>
-    <p style="font-size:10px;color:#666;margin:0;">Nebius bought the #1 search API for $275M. Their customers are shopping. 3-6 month window.</p>
-  </div>
-  <div style="background:#f8f9fa;border:1px solid #e5e7eb;border-radius:8px;padding:12px 14px;">
-    <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#999;margin-bottom:4px;">The Edge</p>
-    <p style="font-size:20px;font-weight:800;color:#0ea5e9;margin-bottom:2px;">Trust scoring</p>
-    <p style="font-size:10px;color:#666;margin:0;">Only API that scores source credibility. 37% cheaper than Tavily. 30+ languages. +11% relevance.</p>
-  </div>
-</div>
-
-<!-- Row 4: 30/60/90 ramp -->
-<div style="background:#f8f9fa;border:1px solid #e5e7eb;border-radius:10px;padding:14px 18px;">
-  <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#999;margin-bottom:10px;">Pipeline Ramp &rarr; 30 / 60 / 90 Days <span style="font-weight:400;color:#bbb;text-transform:none;letter-spacing:0;">(part-time, 15-20 hrs/week)</span></p>
-  <div style="display:grid;grid-template-columns:auto 1fr 1fr 1fr;gap:0;font-size:11px;">
-    <!-- Header row -->
-    <div style="padding:5px 12px 5px 0;"></div>
-    <div style="padding:5px 10px;text-align:center;font-weight:700;color:#999;font-size:9px;text-transform:uppercase;letter-spacing:0.5px;">Day 30</div>
-    <div style="padding:5px 10px;text-align:center;font-weight:700;color:#999;font-size:9px;text-transform:uppercase;letter-spacing:0.5px;">Day 60</div>
-    <div style="padding:5px 10px;text-align:center;font-weight:700;color:#0ea5e9;font-size:9px;text-transform:uppercase;letter-spacing:0.5px;background:#f0f7ff;border-radius:6px 6px 0 0;">Day 90</div>
-    <!-- Pipeline -->
-    <div style="padding:5px 12px 5px 0;font-weight:600;color:#333;">Qualified leads</div>
-    <div style="padding:5px 10px;text-align:center;color:#666;">5</div>
-    <div style="padding:5px 10px;text-align:center;color:#666;">12</div>
-    <div style="padding:5px 10px;text-align:center;font-weight:800;color:#0ea5e9;background:#f0f7ff;">20</div>
-    <!-- POCs -->
-    <div style="padding:5px 12px 5px 0;font-weight:600;color:#333;">Active POCs</div>
-    <div style="padding:5px 10px;text-align:center;color:#ccc;">—</div>
-    <div style="padding:5px 10px;text-align:center;color:#666;">1</div>
-    <div style="padding:5px 10px;text-align:center;font-weight:800;color:#0ea5e9;background:#f0f7ff;">1-2</div>
-    <!-- Signed -->
-    <div style="padding:5px 12px 5px 0;font-weight:600;color:#333;">Signed customers</div>
-    <div style="padding:5px 10px;text-align:center;color:#ccc;">—</div>
-    <div style="padding:5px 10px;text-align:center;color:#ccc;">—</div>
-    <div style="padding:5px 10px;text-align:center;font-weight:800;color:#0ea5e9;background:#f0f7ff;">0-1</div>
-    <!-- Partners -->
-    <div style="padding:5px 12px 5px 0;font-weight:600;color:#333;">Partnership conversations</div>
-    <div style="padding:5px 10px;text-align:center;color:#ccc;">—</div>
-    <div style="padding:5px 10px;text-align:center;color:#666;">1</div>
-    <div style="padding:5px 10px;text-align:center;font-weight:800;color:#0ea5e9;background:#f0f7ff;">2</div>
-    <!-- Tavily -->
-    <div style="padding:5px 12px 5px 0;font-weight:600;color:#333;">Tavily conversations</div>
-    <div style="padding:5px 10px;text-align:center;color:#666;">1</div>
-    <div style="padding:5px 10px;text-align:center;color:#666;">2</div>
-    <div style="padding:5px 10px;text-align:center;font-weight:800;color:#0ea5e9;background:#f0f7ff;border-radius:0 0 6px 6px;">3</div>
-  </div>
-</div>
-
-</div>
-
-<p style="font-size:11px;color:#999;text-align:center;margin:0 0 20px;text-transform:uppercase;letter-spacing:1px;">Details below &darr;</p>
-
-<!-- ═══ PRODUCT LINEUP ═══ -->
-<div class="section" id="s-lineup">
-<div class="section-header" onclick="toggleSection(this)">
-<h2>Cloudsway Product Lineup</h2>
-<span class="section-chevron">▾</span>
-</div>
-<div class="section-body">
-
-<p>Full-stack AI infrastructure — from data acquisition to model orchestration to compute. 1,000+ enterprises across 80+ countries.</p>
-
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 14px 0;">
-  <div class="card-accent" style="border: 2px solid #0ea5e9; position: relative;">
-    <div style="position:absolute;top:-9px;right:14px;background:#0ea5e9;color:#fff;font-size:9px;font-weight:700;padding:2px 10px;border-radius:8px;text-transform:uppercase;letter-spacing:0.5px;">Core — US BD focus</div>
-    <h3 style="margin-top:6px; font-size: 14px; color: #0ea5e9;">SmartSearch</h3>
-    <p style="font-size: 12px; font-weight: 600; color: #111; margin-bottom: 6px;">AI Search API — The Authority Layer</p>
-    <ul>
-      <li>Self-developed semantic engine for deep web data</li>
-      <li>Authority / credibility scoring per result</li>
-      <li>Structured JSON output (title, URL, snippet, date, score)</li>
-      <li>Freshness controls (Day / Week / Month / custom range)</li>
-      <li>30+ language support, global data coverage</li>
-      <li>Hundreds of millions of API calls/month in production</li>
-      <li>MCP server integration (SmartSearch on GitHub)</li>
-      <li>Available on AWS Marketplace</li>
-    </ul>
-    <p style="font-size: 11px; color: #666; margin-top: 8px;"><strong>Pricing:</strong> $0.005 per request (usage-based, no subscription lock-in)</p>
-    <p style="font-size: 11px; color: #666;"><strong>Benchmark:</strong> +11% higher relevance vs. alternatives</p>
-  </div>
-
-  <div style="display: flex; flex-direction: column; gap: 14px;">
-    <div class="card" style="flex: 1;">
-      <h3 style="font-size: 13px;">Skyrouter</h3>
-      <p style="font-size: 12px; font-weight: 600; color: #111; margin-bottom: 4px;">AI Model Orchestration</p>
-      <ul>
-        <li>Unified access to 100+ commercial & open-source models</li>
-        <li>Single API endpoint, smart routing across providers</li>
-        <li>Standardized interface — swap models without code changes</li>
-      </ul>
-    </div>
-    <div class="card" style="flex: 1;">
-      <h3 style="font-size: 13px;">GPU Cloud</h3>
-      <p style="font-size: 12px; font-weight: 600; color: #111; margin-bottom: 4px;">AI Training & Inference Compute</p>
-      <ul>
-        <li>Fast-access GPU instances for training and inference</li>
-        <li>Multi-cloud operations, pay-per-resource</li>
-        <li>Starts at $150/month</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 20px;">
-  <div class="card">
-    <h3 style="font-size: 13px;">Agent Sandbox</h3>
-    <p style="font-size: 12px; font-weight: 600; color: #111; margin-bottom: 4px;">Secure Agent Runtime</p>
-    <p>Isolated sandbox environment tailored for AI agents — safe execution of agent tasks with security guardrails.</p>
-  </div>
-</div>
-
-</div></div>
-<!-- ═══ 1. THE CORE INSIGHT ═══ -->
-<div class="section" id="s-insight">
-<div class="section-header" onclick="toggleSection(this)">
-<h2>1. The Core Insight</h2>
-<span class="section-chevron">▾</span>
-</div>
-<div class="section-body">
-
-
-<div class="card-dark" style="margin: 10px 0 20px; padding: 18px 22px;">
-  <p style="margin-bottom: 10px;"><strong>Example: a legal research agent that pulls case law for a partner review</strong></p>
-  <table style="margin: 0; background: transparent;">
-    <thead>
-      <tr><th style="background:transparent;color:#666;border-color:#333;">What the agent does</th><th style="background:transparent;color:#666;border-color:#333;">Without Cloudsway</th><th style="background:transparent;color:#666;border-color:#333;">With Cloudsway</th></tr>
-    </thead>
-    <tbody>
-      <tr><td style="color:#ccc;border-color:#222;">Search for relevant case law</td><td style="color:#888;border-color:#222;">Raw links, no authority signal</td><td style="color:#ccc;border-color:#222;">Ranked by source authority + recency</td></tr>
-      <tr><td style="color:#ccc;border-color:#222;">Verify source credibility</td><td style="color:#888;border-color:#222;">Manual review required</td><td style="color:#ccc;border-color:#222;">Authority score per result, auto-filtered</td></tr>
-      <tr><td style="color:#ccc;border-color:#222;">Return structured citations</td><td style="color:#888;border-color:#222;">Unstructured HTML scraping</td><td style="color:#ccc;border-color:#222;">Clean JSON with title, date, source, score</td></tr>
-      <tr><td style="color:#ccc;border-color:#222;">Detect stale or retracted info</td><td style="color:#888;border-color:#222;">No freshness filtering</td><td style="color:#ccc;border-color:#222;">Freshness controls (Day/Week/Month)</td></tr>
-      <tr style="border-top:1px solid #444;">
-        <td style="color:#fff;font-weight:700;border-color:#222;">Outcome</td>
-        <td style="color:#f87171;font-weight:700;border-color:#222;">Partner cites a non-existent case</td>
-        <td style="color:#4ade80;font-weight:700;border-color:#222;">Every citation is traceable + verified</td>
-      </tr>
-    </tbody>
-  </table>
-  <p style="font-size:11px;color:#666;margin:10px 0 0;">This isn't a convenience feature — in legal, medical, and financial AI, a wrong source is a liability event. Authority scoring turns Cloudsway from "nice to have" into "can't ship without."</p>
-</div>
-
-</div></div>
-<!-- ═══ 2. THREE PILLARS ═══ -->
-<div class="section" id="s-pillars">
-<div class="section-header" onclick="toggleSection(this)">
-<h2>2. Three Growth Pillars</h2>
-<span class="section-chevron">▾</span>
-</div>
-<div class="section-body">
-
-<p style="font-size:13px;font-weight:600;color:#111;margin-bottom:16px;">Focus: land with vertical AI where trust is non-negotiable. Agent platforms and enterprise are secondary — start conversations, but priority is Pillar 1 pipeline.</p>
-
-<!-- PILLAR 1 -->
-<div style="border:2px solid #0ea5e9;border-radius:12px;padding:0;margin-top:20px;overflow:hidden;">
-  <div style="background:#0ea5e9;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;">
-    <div>
-      <p style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.7);margin:0;">Pillar 1 — 60% of effort</p>
-      <p style="font-size:15px;font-weight:800;color:#fff;margin:2px 0 0;">High-Stakes Vertical AI</p>
-    </div>
-  </div>
-  <div style="padding:16px 20px;">
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:14px;">
-      <div style="background:#fef2f2;border-radius:8px;padding:10px 12px;text-align:center;">
-        <p style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#dc2626;margin-bottom:2px;">The Pain</p>
-        <p style="font-size:11.5px;font-weight:600;color:#111;margin:0;">1 hallucination = lawsuit</p>
-      </div>
-      <div style="background:#f0f7ff;border-radius:8px;padding:10px 12px;text-align:center;">
-        <p style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#0ea5e9;margin-bottom:2px;">The Message</p>
-        <p style="font-size:11.5px;font-weight:600;color:#111;margin:0;">We score which sources are citable</p>
-      </div>
-      <div style="background:#ecfdf5;border-radius:8px;padding:10px 12px;text-align:center;">
-        <p style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#059669;margin-bottom:2px;">The Hook</p>
-        <p style="font-size:11.5px;font-weight:600;color:#111;margin:0;">Free 100-query benchmark</p>
-      </div>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-      <div>
-        <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#999;margin-bottom:6px;">Top Targets</p>
-        <div style="display:flex;flex-wrap:wrap;gap:4px;">
-          <span class="tag tag-p1">Harvey AI</span><span class="tag tag-p1">Legora</span><span class="tag tag-p1">OpenEvidence</span><span class="tag tag-p1">AlphaSense</span><span class="tag tag-p1">Hippocratic AI</span><span class="tag tag-p1">EliseAI</span><span class="tag tag-p1">Clay</span><span class="tag tag-p2">+15 more</span>
-        </div>
-      </div>
-      <div>
-        <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#999;margin-bottom:6px;">Triggers</p>
-        <div style="display:flex;flex-wrap:wrap;gap:4px;">
-          <span style="display:inline-block;font-size:9.5px;padding:2px 8px;border-radius:4px;background:#fff7ed;color:#c2410c;border:1px solid #fed7aa;">New funding</span>
-          <span style="display:inline-block;font-size:9.5px;padding:2px 8px;border-radius:4px;background:#fef2f2;color:#dc2626;border:1px solid #fecaca;">AI error press</span>
-          <span style="display:inline-block;font-size:9.5px;padding:2px 8px;border-radius:4px;background:#f0f7ff;color:#0369a1;border:1px solid #bae0fd;">Compliance audit</span>
-          <span style="display:inline-block;font-size:9.5px;padding:2px 8px;border-radius:4px;background:#faf5ff;color:#7c3aed;border:1px solid #c4b5fd;">Regulatory shift</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- PILLAR 2 -->
-<div style="border:2px solid #7c3aed;border-radius:12px;padding:0;margin-top:16px;overflow:hidden;">
-  <div style="background:#7c3aed;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;">
-    <div>
-      <p style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.7);margin:0;">Pillar 2 — Secondary</p>
-      <p style="font-size:15px;font-weight:800;color:#fff;margin:2px 0 0;">Agent Infrastructure & Platforms</p>
-    </div>
-  </div>
-  <div style="padding:16px 20px;">
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:14px;">
-      <div style="background:#fef2f2;border-radius:8px;padding:10px 12px;text-align:center;">
-        <p style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#dc2626;margin-bottom:2px;">The Pain</p>
-        <p style="font-size:11.5px;font-weight:600;color:#111;margin:0;">No search layer for their agents</p>
-      </div>
-      <div style="background:#faf5ff;border-radius:8px;padding:10px 12px;text-align:center;">
-        <p style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#7c3aed;margin-bottom:2px;">The Message</p>
-        <p style="font-size:11.5px;font-weight:600;color:#111;margin:0;">One integration = trusted search for every agent</p>
-      </div>
-      <div style="background:#ecfdf5;border-radius:8px;padding:10px 12px;text-align:center;">
-        <p style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#059669;margin-bottom:2px;">The Hook</p>
-        <p style="font-size:11.5px;font-weight:600;color:#111;margin:0;">MCP server already shipped</p>
-      </div>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-      <div>
-        <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#999;margin-bottom:6px;">Top Targets</p>
-        <div style="display:flex;flex-wrap:wrap;gap:4px;">
-          <span class="tag tag-p1">LangChain</span><span class="tag tag-p1">LlamaIndex</span><span class="tag tag-p1">Cursor</span><span class="tag tag-p1">Cognition AI</span><span class="tag tag-p1">Windsurf</span><span class="tag tag-p1">Steel.dev</span><span class="tag tag-p1">Fireworks AI</span><span class="tag tag-p2">+12 more</span>
-        </div>
-      </div>
-      <div>
-        <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#999;margin-bottom:6px;">Triggers</p>
-        <div style="display:flex;flex-wrap:wrap;gap:4px;">
-          <span style="display:inline-block;font-size:9.5px;padding:2px 8px;border-radius:4px;background:#fef2f2;color:#dc2626;border:1px solid #fecaca;">Tavily acquired</span>
-          <span style="display:inline-block;font-size:9.5px;padding:2px 8px;border-radius:4px;background:#fff7ed;color:#c2410c;border:1px solid #fed7aa;">New product launch</span>
-          <span style="display:inline-block;font-size:9.5px;padding:2px 8px;border-radius:4px;background:#f0f7ff;color:#0369a1;border:1px solid #bae0fd;">Hiring AI infra</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- PILLAR 3 -->
-<div style="border:2px solid #64748b;border-radius:12px;padding:0;margin-top:16px;overflow:hidden;">
-  <div style="background:#64748b;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;">
-    <div>
-      <p style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.7);margin:0;">Pillar 3 — Seed Only</p>
-      <p style="font-size:15px;font-weight:800;color:#fff;margin:2px 0 0;">Enterprise AI Fleets</p>
-    </div>
-  </div>
-  <div style="padding:16px 20px;">
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:14px;">
-      <div style="background:#fef2f2;border-radius:8px;padding:10px 12px;text-align:center;">
-        <p style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#dc2626;margin-bottom:2px;">The Pain</p>
-        <p style="font-size:11.5px;font-weight:600;color:#111;margin:0;">Agents citing stale / wrong info</p>
-      </div>
-      <div style="background:#f8f9fa;border-radius:8px;padding:10px 12px;text-align:center;">
-        <p style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#64748b;margin-bottom:2px;">The Message</p>
-        <p style="font-size:11.5px;font-weight:600;color:#111;margin:0;">Every answer sourced and traceable</p>
-      </div>
-      <div style="background:#ecfdf5;border-radius:8px;padding:10px 12px;text-align:center;">
-        <p style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#059669;margin-bottom:2px;">The Hook</p>
-        <p style="font-size:11.5px;font-weight:600;color:#111;margin:0;">Pilot with 1 agent, measure delta</p>
-      </div>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-      <div>
-        <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#999;margin-bottom:6px;">Top Targets</p>
-        <div style="display:flex;flex-wrap:wrap;gap:4px;">
-          <span class="tag tag-p1">Sierra ($10B)</span><span class="tag tag-p1">ASAPP</span><span class="tag tag-p1">Inflection AI</span><span class="tag tag-p1">H2O.ai</span><span class="tag tag-p2">Salesforce Agentforce</span><span class="tag tag-p2">HubSpot Breeze</span><span class="tag tag-p2">+4 more</span>
-        </div>
-      </div>
-      <div>
-        <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#999;margin-bottom:6px;">Triggers</p>
-        <div style="display:flex;flex-wrap:wrap;gap:4px;">
-          <span style="display:inline-block;font-size:9.5px;padding:2px 8px;border-radius:4px;background:#fff7ed;color:#c2410c;border:1px solid #fed7aa;">10+ agent fleet</span>
-          <span style="display:inline-block;font-size:9.5px;padding:2px 8px;border-radius:4px;background:#fef2f2;color:#dc2626;border:1px solid #fecaca;">Customer complaints</span>
-          <span style="display:inline-block;font-size:9.5px;padding:2px 8px;border-radius:4px;background:#f0f7ff;color:#0369a1;border:1px solid #bae0fd;">Compliance audit</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-</div></div>
-<!-- ═══ 5. PARTNERSHIPS ═══ -->
-<div class="section" id="s-partners">
-<div class="section-header" onclick="toggleSection(this)">
-<h2>3. Partnerships — Distribution Through Ecosystems</h2>
-<span class="section-chevron">▾</span>
-</div>
-<div class="section-body">
-
-<table>
-  <thead>
-    <tr><th>Partner Type</th><th>Target</th><th>Why</th><th>Timeline</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>Agent frameworks</td><td>LangChain, LlamaIndex</td><td>Their developers need a search provider. One integration = thousands of agents using Cloudsway</td><td>1 signed in 60 days</td></tr>
-    <tr><td>Browser infra</td><td>Steel.dev, BrowserBase</td><td>Browser agents need search as a complement to browsing. Natural integration point</td><td>Conversation by Day 30</td></tr>
-    <tr><td>Coding agents</td><td>Cursor, Windsurf, Cognition</td><td>Coding agents search docs constantly — freshness and structure are critical for code quality</td><td>POC by Day 60</td></tr>
-    <tr><td>Vertical AI leaders</td><td>Harvey AI, OpenEvidence</td><td>Case study with a marquee name validates the entire vertical. Harvey using Cloudsway = every legal AI startup follows</td><td>POC by Day 90</td></tr>
-    <tr><td>Tavily displacement</td><td>Any Tavily customer</td><td>Post-acquisition instability. Offer migration support + benchmark comparison</td><td>Active outbound from Day 1</td></tr>
-  </tbody>
-</table>
-
-</div></div>
-<!-- ═══ 7. HOW I'D EXECUTE ═══ -->
-<div class="section" id="s-outbound">
-<div class="section-header" onclick="toggleSection(this)">
-<h2>4. How I'd Execute Outbound</h2>
-<span class="section-chevron">▾</span>
-</div>
-<div class="section-body">
-
-<div class="callout">
-  <p><strong>Signal-based, vertical-specific outbound.</strong> Not generic cold emails. Every conversation is triggered by a real signal and speaks the buyer's language — hallucination risk for legal, patient safety for medical, audit compliance for finance.</p>
-</div>
-
-<div class="card" style="margin-top: 12px;">
-  <h3>The outbound engine</h3>
-  <ul>
-    <li><strong>Vertical-specific messaging:</strong> Three different email sequences for legal, medical, and financial AI — each referencing real incidents and regulatory requirements specific to that industry</li>
-    <li><strong>Signal-based timing:</strong> Trigger outreach when a company raises a round (VCs will ask about reliability), ships a new product (needs search infra), or gets negative press about AI errors</li>
-    <li><strong>Benchmark as door-opener:</strong> "Send us 100 queries your agent runs — we'll return authority-scored results and show you the delta vs. what you get today." Zero risk, high insight. Turns a cold outreach into a free evaluation</li>
-    <li><strong>Tavily displacement playbook:</strong> Dedicated sequence for known Tavily customers — migration guide, benchmark comparison, stability guarantee as an independent vendor</li>
-    <li><strong>Community presence:</strong> Active in LangChain Discord, AI agent Twitter/X communities, and relevant Slack groups. Share authority scoring insights, not product pitches</li>
-  </ul>
-
-</div>
-
-</div></div>
-<!-- ═══ SALES AUTOMATION ═══ -->
-<div class="section" id="s-automation">
-<div class="section-header" onclick="toggleSection(this)">
-<h2>5. Sales Automation — AI-Powered Pipeline Engine</h2>
-<span class="section-chevron">▾</span>
-</div>
-<div class="section-body">
-
-<p>I don't do manual prospecting. I build systems that prospect for me — then I spend my time on conversations, not spreadsheets. Here's the engine I'd deploy in Week 1.</p>
-
-<div style="display:flex;align-items:center;gap:0;margin:20px 0 24px;flex-wrap:wrap;">
-  <div style="background:#111;color:#fff;padding:14px 18px;border-radius:10px 0 0 10px;flex:1;min-width:180px;">
-    <p style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#0ea5e9;margin-bottom:4px;">Step 1 — Discover</p>
-    <p style="font-size:13px;font-weight:700;margin-bottom:4px;">Auto-qualify companies</p>
-    <p style="font-size:11px;color:#999;margin:0;">Claude agent scans for AI companies matching ICP — vertical (legal/medical/finance), stage (Seed–B), signals (new funding, hiring AI roles, Tavily dependency). Outputs a ranked prospect list daily.</p>
-  </div>
-  <div style="color:#0ea5e9;font-size:20px;padding:0 2px;">›</div>
-  <div style="background:#111;color:#fff;padding:14px 18px;flex:1;min-width:180px;">
-    <p style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#0ea5e9;margin-bottom:4px;">Step 2 — Track</p>
-    <p style="font-size:13px;font-weight:700;margin-bottom:4px;">Monitor decision-makers</p>
-    <p style="font-size:11px;color:#999;margin:0;">For each qualified company, identify the Eng/Product lead and track their LinkedIn activity — posts, comments, job changes, company announcements. Every update is a potential conversation opener.</p>
-  </div>
-  <div style="color:#0ea5e9;font-size:20px;padding:0 2px;">›</div>
-  <div style="background:#111;color:#fff;padding:14px 18px;border-radius:0 10px 10px 0;flex:1;min-width:180px;">
-    <p style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#0ea5e9;margin-bottom:4px;">Step 3 — Engage</p>
-    <p style="font-size:13px;font-weight:700;margin-bottom:4px;">Craft pain-based outreach</p>
-    <p style="font-size:11px;color:#999;margin:0;">Claude drafts a personalized message referencing their specific activity + mapped pain point. Not a template — a message that shows I've done the homework. I review, refine, and send.</p>
-  </div>
-</div>
-
-
-<div class="card" style="margin-top:14px;">
-  <h3>The Stack — Open-Source Tools I'd Wire Together</h3>
-  <p style="font-size:11.5px;color:#555;margin-bottom:10px;">Not building from scratch. These are battle-tested open-source projects I'd assemble into the pipeline above, with Claude as the orchestration layer.</p>
-  <table style="margin:0;">
-    <thead><tr><th>Step</th><th>Tool</th><th>What it does</th><th>Role in pipeline</th></tr></thead>
-    <tbody>
-      <tr>
-        <td rowspan="2" style="vertical-align:top;font-weight:600;color:#0ea5e9;">Discover</td>
-        <td><strong>Fire-Enrich</strong> <span style="font-size:9px;color:#888;">(1.2K ★)</span></td>
-        <td>AI-powered company enrichment — funding data, tech stacks, profiles</td>
-        <td>Feed in company names, get ICP-scored profiles back</td>
-      </tr>
-      <tr>
-        <td><strong>OpenOutreach</strong> <span style="font-size:9px;color:#888;">(1.7K ★)</span></td>
-        <td>Self-hosted LinkedIn automation — describe ICP, it discovers leads</td>
-        <td>Autonomous prospecting against Cloudsway's target verticals</td>
-      </tr>
-      <tr>
-        <td style="font-weight:600;color:#0ea5e9;">Track</td>
-        <td><strong>linkedin_scraper</strong> <span style="font-size:9px;color:#888;">(3.7K ★)</span></td>
-        <td>Playwright-based LinkedIn profile & post scraper</td>
-        <td>Scheduled daily — diff tracker surfaces new posts, job changes, announcements</td>
-      </tr>
-      <tr>
-        <td style="font-weight:600;color:#0ea5e9;">Engage</td>
-        <td><strong>SalesGPT</strong> <span style="font-size:9px;color:#888;">(2.4K ★)</span></td>
-        <td>Context-aware LLM sales agent with product knowledge base</td>
-        <td>Drafts pain-based messages using tracked activity + Cloudsway positioning</td>
-      </tr>
-      <tr style="background:#f0f7ff;">
-        <td style="font-weight:600;color:#0ea5e9;">Orchestrate</td>
-        <td><strong>Claude + LangGraph</strong></td>
-        <td>Multi-agent orchestration — research → qualify → draft → review</td>
-        <td>Glue layer: Claude coordinates the pipeline end-to-end, I review outputs</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-</div></div>
-<!-- ═══ 6. WEEK 1-4 EXECUTION PLAN ═══ -->
-<div class="section" id="s-30days">
-<div class="section-header" onclick="toggleSection(this)">
-<h2>6. First 30 Days — Detailed Execution</h2>
-<span class="section-chevron">▾</span>
-</div>
-<div class="section-body">
+<p class="big-quote">Tavily just got acquired for $275M. Their customers are shopping. Cloudsway has the only search API that scores source trustworthiness — not just relevance. That's a wedge into legal, medical, and financial AI where a wrong source is a lawsuit.</p>
 
 <div class="two-col">
   <div class="card">
-    <h3>Week 1-2: Foundation</h3>
+    <h3>Why Now</h3>
     <ul>
-      <li>Deep-dive on Cloudsway's product, API docs, and competitive positioning</li>
-      <li>Build the "benchmark as door-opener" workflow — automate the 100-query comparison</li>
-      <li>Draft 3 vertical-specific email sequences (legal, medical, financial)</li>
-      <li>Map decision-makers at top 15 P1 accounts using LinkedIn + public signals</li>
-      <li>Identify and reach out to 5 known Tavily customers</li>
+      <li>Tavily acquisition creates a <strong>3–6 month switching window</strong></li>
+      <li>AI agent adoption is accelerating — every agent needs a search layer</li>
+      <li>No US-based BD motion today = open field</li>
     </ul>
   </div>
   <div class="card">
-    <h3>Week 3-4: First conversations</h3>
+    <h3>Why SmartSearch Wins</h3>
     <ul>
-      <li>Send first batch: 20 personalized outreaches to P1 vertical AI targets</li>
-      <li>Start LangChain / LlamaIndex partnership conversations</li>
-      <li>Publish first vertical benchmark (legal: Cloudsway vs. raw search on 500 queries)</li>
-      <li>Begin Tavily displacement outbound</li>
-      <li>First POC underway with at least 1 target</li>
-      <li>Weekly pipeline review with Cloudsway team</li>
+      <li><strong>Authority scoring</strong> — no competitor does this</li>
+      <li><strong>37% cheaper</strong> than Tavily</li>
+      <li><strong>+11% relevance</strong> in benchmarks</li>
+      <li>30+ languages, hundreds of millions of calls/month</li>
     </ul>
   </div>
 </div>
 
-</div></div>
-<!-- ══════════════════════════════════════════════════════════════════════ -->
-<!-- COMPETITIVE INTELLIGENCE -->
-<!-- ══════════════════════════════════════════════════════════════════════ -->
-<div class="section" id="s-intel">
-<div class="section-header" onclick="toggleSection(this)">
-<h2 style="font-size:14px;letter-spacing:2px;margin:0;padding:0;border:none;">Appendix: Competitive Intelligence by Product</h2>
-<span class="section-chevron">▾</span>
-</div>
-<div class="section-body">
-<p>ICP, value proposition, and competitive positioning for every Cloudsway product — 46 competitors analyzed across 4 products.</p>
+<!-- SECTION 2 -->
+<h2>2. The Plan — Three Priorities</h2>
 
-<div class="tab-bar">
-  <button class="tab-btn active" data-tab="smartsearch" onclick="switchTab(this)">SmartSearch</button>
-  <button class="tab-btn" data-tab="skyrouter" onclick="switchTab(this)">Skyrouter</button>
-  <button class="tab-btn" data-tab="gpu" onclick="switchTab(this)">GPU Cloud</button>
-  <button class="tab-btn" data-tab="sandbox" onclick="switchTab(this)">Agent Sandbox</button>
-  <button class="tab-btn" data-tab="summary" onclick="switchTab(this)">Summary</button>
+<p style="font-size: 12px; color: #666; margin-bottom: 14px;">This is a seed-planting engagement. The goal is to open doors and build relationships — not chase quota. When Cloudsway is ready to push harder, the pipeline will be warm.</p>
+
+<div class="pillar pillar-primary">
+  <div class="pillar-label">Priority — Where I'll spend most of my time</div>
+  <h3>High-Stakes Vertical AI</h3>
+  <p>Legal, medical, and financial AI companies where <strong>one hallucination = a liability event</strong>. These buyers don't want "relevant results" — they need results they can safely cite. Authority scoring is a must-have, not a nice-to-have.</p>
+  <p><strong>Door opener:</strong> "Send us 100 queries your agent runs. We'll return authority-scored results and show you the delta." Zero risk, high insight.</p>
+  <p style="font-size: 11px; color: #888; margin-top: 8px;">Targets include: Harvey AI, Legora, OpenEvidence, AlphaSense, Hippocratic AI, Clay, and others.</p>
 </div>
 
-<!-- SMARTSEARCH TAB -->
-<div class="tab-panel active" id="tab-smartsearch">
-<div id="smartsearch"></div>
-
-<div style="background:#111;border-radius:10px;padding:16px 20px;margin-top:14px;">
-  <p style="color:#fff;font-size:13px;font-weight:700;margin-bottom:8px;">What makes SmartSearch different</p>
-  <p style="color:#ccc;font-size:12px;margin-bottom:8px;">Every other search API returns results ranked by <em>relevance</em> — "does this page match what you searched for?" SmartSearch adds a second layer: <strong style="color:#0ea5e9;">source trustworthiness</strong>. Each result comes with a credibility score that tells the AI agent "this is from a verified court database (high trust)" vs. "this is from an anonymous blog post (low trust)" — <em>before</em> the AI reads it.</p>
-  <p style="color:#ccc;font-size:12px;margin-bottom:8px;"><strong style="color:#fff;">Why it matters:</strong> When a legal AI cites a case that doesn't exist, the law firm gets sued. When a medical AI cites a retracted study, patients get hurt. These companies can't use a search API that just says "here are relevant results" — they need one that says "here are relevant results <em>you can safely cite</em>." That's what the trust score does.</p>
-  <p style="color:#ccc;font-size:12px;margin-bottom:0;"><strong style="color:#fff;">Why nobody else has it:</strong> Tavily ($275M acquired by Nebius) optimizes for speed. Exa ($85M) optimizes for semantic understanding. Perplexity ($21B) generates answers, not raw results. <strong style="color:#0ea5e9;">None of them score source credibility.</strong> SmartSearch is also 37% cheaper than Tavily and supports 30+ languages (most competitors are English-only).</p>
-</div>
-
-<div class="product-header" style="margin-top: 14px;">
-  <div class="product-tag">Product 1 — Core US BD Focus</div>
-  <h3>SmartSearch — AI Search API</h3>
-  <p style="font-size: 12px; color: #555; margin-top: 4px;">$0.005/request &middot; Authority scoring &middot; 30+ languages &middot; MCP server &middot; +11% relevance</p>
-</div>
-
-<div class="icp-box">
-  <h3>SmartSearch ICP</h3>
-  <p><strong>Company:</strong> AI startups building RAG/agent features (Seed-B, 10-200 ppl) &middot; <strong>Buyer:</strong> Eng leads, AI/ML engineers &middot; <strong>Budget:</strong> $50-500/mo &middot; <strong>Use cases:</strong> RAG pipelines, agent web search, fact-checking, multilingual AI</p>
-</div>
-
-<div class="vp-box">
-  <h3>Value Prop</h3>
-  <p><strong>The only search API with built-in authority/credibility scoring.</strong> 37% cheaper than Tavily, +11% more relevant, 30+ languages. In legal/medical/financial AI, "relevant" isn't enough — agents need to know which results are <em>trustworthy</em>.</p>
-</div>
-
-<!-- SmartSearch positioning map: X = AI-native features, Y = price (low=expensive, high=cheap) -->
-<div class="pos-map" style="height:280px;">
-  <div class="grid-line-h"></div><div class="grid-line-v"></div>
-  <div class="axis-x">AI-Native Features &rarr;</div>
-  <div class="axis-x-label-l">Raw SERP</div>
-  <div class="axis-x-label-r">Agent-optimized</div>
-  <div class="axis-y-label-t">Cheap</div>
-  <div class="axis-y-label-b">Expensive</div>
-  <!-- dots: left% = AI features, top% = price (low top = cheap) -->
-  <div class="pos-dot neutral" style="left:15%;top:18%;">Serper $0.3-1/1K</div>
-  <div class="pos-dot neutral" style="left:22%;top:68%;">SerpAPI $10-25/1K</div>
-  <div class="pos-dot dead" style="left:18%;top:45%;">Google CSE (dead)</div>
-  <div class="pos-dot neutral" style="left:50%;top:38%;">Brave $5/1K</div>
-  <div class="pos-dot neutral" style="left:55%;top:35%;">You.com $5/1K</div>
-  <div class="pos-dot threat" style="left:72%;top:50%;">Tavily $8-16/1K</div>
-  <div class="pos-dot threat" style="left:68%;top:42%;">Exa $3-7/1K</div>
-  <div class="pos-dot neutral" style="left:78%;top:78%;">Perplexity $5-22/1K</div>
-  <div class="pos-dot cloudsway" style="left:82%;top:32%;">SmartSearch $5/1K</div>
-</div>
-
-<table class="comp-table">
-  <thead><tr><th>Competitor</th><th>Value Prop</th><th>ICP</th><th>$/1K</th><th>Cloudsway Edge</th></tr></thead>
-  <tbody>
-    <tr class="row-cs"><td>SmartSearch</td><td>Authority scoring + structured JSON + freshness</td><td>AI agent builders, RAG teams</td><td>$5</td><td>—</td></tr>
-    <tr><td>Tavily <span style="font-size:9px;color:#888;">(Nebius, $275M acq)</span></td><td>Agentic search, LLM-optimized results</td><td>LangChain/agent devs, enterprise AI</td><td>$8-16</td><td>37% cheaper, authority scoring</td></tr>
-    <tr><td>Exa <span style="font-size:9px;color:#888;">($85M, $700M val)</span></td><td>Neural/semantic search, deep research</td><td>AI researchers, enterprise knowledge</td><td>$3-7</td><td>Simpler pricing, authority built-in</td></tr>
-    <tr><td>Perplexity <span style="font-size:9px;color:#888;">($21B val)</span></td><td>AI-generated answers with citations</td><td>Research tool builders, enterprise</td><td>$5-22+</td><td>Raw results (more control), much cheaper</td></tr>
-    <tr><td>You.com <span style="font-size:9px;color:#888;">($1.5B val)</span></td><td>LLM-optimized web search, fast p99</td><td>Enterprise AI apps, coding agents</td><td>$5</td><td>Authority scoring, 30+ languages</td></tr>
-    <tr><td>Brave</td><td>Independent index, privacy-first</td><td>Privacy-conscious devs</td><td>$5</td><td>Authority scoring, freshness controls</td></tr>
-    <tr><td>Serper.dev</td><td>Cheapest Google results, high throughput</td><td>Budget devs, automation</td><td>$0.3-1</td><td>AI-native features, authority, LLM-ready</td></tr>
-    <tr><td>SerpAPI</td><td>Real Google/Bing/Yahoo SERP scraping</td><td>SEO pros, market researchers</td><td>$10-25</td><td>Cheaper, AI-native, agent-optimized</td></tr>
-  </tbody>
-</table>
-
-
-</div><!-- /tab-smartsearch -->
-
-<!-- SKYROUTER TAB -->
-<div class="tab-panel" id="tab-skyrouter">
-<div id="skyrouter"></div>
-
-<div style="background:#111;border-radius:10px;padding:16px 20px;margin-top:14px;">
-  <p style="color:#fff;font-size:13px;font-weight:700;margin-bottom:8px;">What makes Skyrouter different</p>
-  <p style="color:#ccc;font-size:12px;margin-bottom:8px;">Think of it like a flight aggregator, but for AI models. Instead of going to each airline (OpenAI, Anthropic, Meta, Mistral) separately, you use one API that <strong style="color:#a78bfa;">automatically picks the best model for each request</strong> — cheapest for simple tasks, smartest for hard ones — and if one provider goes down, it reroutes instantly. You never change your code.</p>
-  <p style="color:#ccc;font-size:12px;margin-bottom:8px;"><strong style="color:#fff;">Why it matters:</strong> Companies running AI in production use 3-5 different model providers. Without Skyrouter, they build and maintain custom routing logic, handle failovers manually, and can't easily track costs per team. With Skyrouter, one integration handles all of it.</p>
-  <p style="color:#ccc;font-size:12px;margin-bottom:0;"><strong style="color:#fff;">Why nobody else has it:</strong> OpenRouter ($1.3B) has the most models (400+) but it's a marketplace — no smart routing or enterprise controls. Martian ($1.3B) has the smartest routing but only routes, no platform. Portkey ($18M) has enterprise controls but weak routing. AWS/Azure/Google lock you into their models. <strong style="color:#a78bfa;">Nobody combines broad model access + smart routing + enterprise governance in one product.</strong> $14B market &rarr; $60B by 2034.</p>
-</div>
-
-<div class="product-header product-sky">
-  <div class="product-tag">Product 2 — Upsell Path</div>
-  <h3>Skyrouter — AI Model Orchestration</h3>
-  <p style="font-size: 12px; color: #555; margin-top: 4px;">100+ models &middot; Single API endpoint &middot; Smart routing &middot; Swap models without code changes</p>
-</div>
-
-<div class="icp-box">
-  <h3>Skyrouter ICP</h3>
-  <p><strong>Company:</strong> Mid-market AI-native (50-500 ppl, Series A-C), running 3+ LLM providers, $10K-500K/mo inference spend &middot; <strong>Buyer:</strong> Platform eng leads, AI infra engineers, CTOs &middot; <strong>Secondary:</strong> Enterprise platform teams, AI agencies</p>
-</div>
-
-<div class="vp-box" style="background:#faf5ff;border-color:#c4b5fd;">
-  <h3 style="color:#5b21b6;">Value Prop</h3>
-  <p style="color:#5b21b6;"><strong>Coverage + routing + governance in one product.</strong> OpenRouter has 400+ models but weak governance. Martian has smart routing but narrow coverage. Portkey has governance but weak routing. LiteLLM is self-hosted. Hyperscalers lock you in. Nobody does all four today. <strong>$14B market &rarr; $60B by 2034.</strong></p>
-</div>
-
-<!-- Skyrouter positioning map: X = routing intelligence, Y = model coverage -->
-<div class="pos-map" style="height:280px;">
-  <div class="grid-line-h"></div><div class="grid-line-v"></div>
-  <div class="axis-x">Routing Intelligence &rarr;</div>
-  <div class="axis-x-label-l">Manual selection</div>
-  <div class="axis-x-label-r">AI-driven routing</div>
-  <div class="axis-y-label-t">Broad coverage</div>
-  <div class="axis-y-label-b">Narrow</div>
-  <!-- dots: left% = routing IQ, top% = coverage (low top = broad) -->
-  <div class="pos-dot threat" style="left:62%;top:10%;">OpenRouter 400+ models</div>
-  <div class="pos-dot threat" style="left:85%;top:40%;">Martian $1.3B</div>
-  <div class="pos-dot neutral" style="left:50%;top:25%;">Portkey</div>
-  <div class="pos-dot leader" style="left:40%;top:22%;">LiteLLM (OSS)</div>
-  <div class="pos-dot neutral" style="left:78%;top:48%;">Unify AI $260M</div>
-  <div class="pos-dot neutral" style="left:88%;top:58%;">Not Diamond</div>
-  <div class="pos-dot neutral" style="left:32%;top:38%;">Helicone (acq'd)</div>
-  <div class="pos-dot neutral" style="left:30%;top:30%;">Braintrust $800M</div>
-  <div class="pos-dot neutral" style="left:18%;top:45%;">AWS Bedrock</div>
-  <div class="pos-dot neutral" style="left:18%;top:52%;">Azure AI Foundry</div>
-  <div class="pos-dot neutral" style="left:18%;top:59%;">Google Vertex</div>
-  <div class="pos-dot neutral" style="left:12%;top:22%;">Together AI $3.3B</div>
-  <div class="pos-dot neutral" style="left:12%;top:15%;">Fireworks 400+</div>
-  <div class="pos-dot neutral" style="left:8%;top:75%;">Groq (speed)</div>
-  <div class="pos-dot cloudsway" style="left:68%;top:20%;">Skyrouter</div>
-</div>
-
-<table class="comp-table">
-  <thead><tr><th>Competitor</th><th>Value Prop</th><th>ICP</th><th>Cloudsway Edge</th></tr></thead>
-  <tbody>
-    <tr class="row-cs"><td>Skyrouter</td><td>100+ models, smart routing, zero-code swap, governance</td><td>Multi-model AI teams, platform eng</td><td>—</td></tr>
-    <tr><td>OpenRouter <span style="font-size:9px;color:#888;">($1.3B)</span></td><td>400+ models, 5.5% fee, developer marketplace</td><td>Individual devs, AI-native startups</td><td>Enterprise governance, not just a marketplace</td></tr>
-    <tr><td>Martian <span style="font-size:9px;color:#888;">($1.3B)</span></td><td>ML-powered routing, 20-97% cost reduction</td><td>AI-native optimizing cost/quality</td><td>Broader coverage, full platform not just routing</td></tr>
-    <tr><td>LiteLLM <span style="font-size:9px;color:#888;">(OSS)</span></td><td>100+ APIs, OpenAI-compatible, self-hosted</td><td>Teams wanting self-hosted control</td><td>Managed service, no DevOps overhead</td></tr>
-    <tr><td>Portkey <span style="font-size:9px;color:#888;">($18M)</span></td><td>Gateway + observability + guardrails + MCP</td><td>Enterprise compliance-heavy teams</td><td>Smarter routing, broader model coverage</td></tr>
-    <tr><td>Helicone <span style="font-size:9px;color:#888;">(acq'd by Mintlify)</span></td><td>Deep observability, cost tracking, caching</td><td>AI teams debugging LLM behavior</td><td>Full orchestration, not just observability</td></tr>
-    <tr><td>AWS / Azure / GCP</td><td>Curated models + cloud ecosystem lock-in</td><td>Enterprises already on that cloud</td><td>Cross-provider, no lock-in, intelligent routing</td></tr>
-    <tr><td>Together / Fireworks / Groq</td><td>Fast inference, open-source models</td><td>Cost-sensitive, inference-focused</td><td>Multi-provider routing, not single-provider</td></tr>
-  </tbody>
-</table>
-
-
-</div><!-- /tab-skyrouter -->
-
-<!-- GPU TAB -->
-<div class="tab-panel" id="tab-gpu">
-<div id="gpu"></div>
-
-<div style="background:#111;border-radius:10px;padding:16px 20px;margin-top:14px;">
-  <p style="color:#fff;font-size:13px;font-weight:700;margin-bottom:8px;">What makes GPU Cloud different</p>
-  <p style="color:#ccc;font-size:12px;margin-bottom:8px;">GPU rental is like early cloud computing — every provider is its own island. If you rent GPUs from RunPod and they run out of capacity, you can't overflow to Lambda or CoreWeave without rebuilding your setup. Cloudsway GPU Cloud is <strong style="color:#fbbf24;">a single dashboard that spans multiple GPU providers</strong> — rent from whoever has availability and the best price, switch without friction.</p>
-  <p style="color:#ccc;font-size:12px;margin-bottom:8px;"><strong style="color:#fff;">Why it matters:</strong> GPU availability is unpredictable. Companies get stuck waiting for H100s on one provider while another has spare capacity. Multi-cloud means you never wait, and you always get the best price. Starting at $150/month makes it accessible to small teams who can't negotiate enterprise contracts.</p>
-  <p style="color:#ccc;font-size:12px;margin-bottom:0;"><strong style="color:#fff;">Why nobody else has it:</strong> RunPod, Lambda, CoreWeave, Vast.ai — all single-platform. AWS/Google/Azure are multi-service but 2-5x more expensive and lock you in. <strong style="color:#fbbf24;">Nobody aggregates GPU capacity across providers into one interface.</strong> Caution: H100 prices are falling fast ($1.64-$12/hr range), margins are thin, and Gartner predicts only a few providers survive past 2027. $7.4B market &rarr; $26B by 2031.</p>
-</div>
-
-<div class="product-header product-gpu">
-  <div class="product-tag">Product 3 — Upsell Path</div>
-  <h3>GPU Cloud — AI Training & Inference Compute</h3>
-  <p style="font-size: 12px; color: #555; margin-top: 4px;">Fast-access GPU instances &middot; Multi-cloud operations &middot; Pay-per-resource &middot; From $150/month</p>
-</div>
-
-<div class="icp-box">
-  <h3>GPU Cloud ICP</h3>
-  <p><strong>Company:</strong> Small-mid AI startups & ML teams (5-50 ppl) &middot; <strong>Buyer:</strong> ML engineers, AI researchers, founding engineers &middot; <strong>Budget:</strong> From $150/mo &middot; <strong>Secondary:</strong> Multi-cloud AI workloads wanting a single pane of glass</p>
-</div>
-
-<div class="vp-box" style="background:#fffbeb;border-color:#fde68a;">
-  <h3 style="color:#92400e;">Value Prop</h3>
-  <p style="color:#92400e;"><strong>Multi-cloud GPU orchestration at a $150/month entry point.</strong> No competitor offers true multi-cloud GPU management — CoreWeave, Lambda, RunPod are all single-platform. Predictable pricing between Vast.ai chaos and Lambda polish. <strong>$7.4B market &rarr; $26B by 2031.</strong></p>
-</div>
-
-<!-- GPU positioning map: X = ease of use, Y = price (low top = cheap) -->
-<div class="pos-map" style="height:300px;">
-  <div class="grid-line-h"></div><div class="grid-line-v"></div>
-  <div class="axis-x">Ease of Use / Managed &rarr;</div>
-  <div class="axis-x-label-l">Bare metal / DIY</div>
-  <div class="axis-x-label-r">Fully managed</div>
-  <div class="axis-y-label-t">Cheap</div>
-  <div class="axis-y-label-b">Expensive</div>
-  <!-- dots: left% = ease of use, top% = H100 price (low = cheap) -->
-  <div class="pos-dot neutral" style="left:22%;top:10%;">SF Compute $1.64</div>
-  <div class="pos-dot neutral" style="left:35%;top:14%;">Vast.ai ~$2.00</div>
-  <div class="pos-dot neutral" style="left:28%;top:18%;">Voltage Park $1.99</div>
-  <div class="pos-dot threat" style="left:65%;top:22%;">RunPod $2.49</div>
-  <div class="pos-dot neutral" style="left:38%;top:24%;">FluidStack $2.50</div>
-  <div class="pos-dot threat" style="left:68%;top:30%;">Lambda $2.89</div>
-  <div class="pos-dot neutral" style="left:45%;top:28%;">Nebius $2.95</div>
-  <div class="pos-dot neutral" style="left:40%;top:40%;">Crusoe $3.90</div>
-  <div class="pos-dot neutral" style="left:78%;top:38%;">Modal $3.95</div>
-  <div class="pos-dot threat" style="left:42%;top:46%;">CoreWeave $4.25</div>
-  <div class="pos-dot neutral" style="left:58%;top:54%;">Paperspace $5.95</div>
-  <div class="pos-dot neutral" style="left:50%;top:65%;">AWS ~$6.88</div>
-  <div class="pos-dot neutral" style="left:48%;top:80%;">Google ~$10.60</div>
-  <div class="pos-dot neutral" style="left:42%;top:88%;">Azure ~$11-12</div>
-  <div class="pos-dot cloudsway" style="left:72%;top:26%;">GPU Cloud $150/mo+</div>
-</div>
-
-<table class="comp-table">
-  <thead><tr><th>Competitor</th><th>Value Prop</th><th>ICP</th><th>H100 $/hr</th><th>Cloudsway Edge</th></tr></thead>
-  <tbody>
-    <tr class="row-cs"><td>GPU Cloud</td><td>Multi-cloud orchestration, predictable pricing</td><td>Small-mid AI teams, multi-cloud</td><td>From $150/mo</td><td>—</td></tr>
-    <tr><td>RunPod</td><td>Developer-first, serverless + pods, per-second billing</td><td>Budget devs, indie hackers</td><td>$2.49</td><td>Multi-cloud, predictable pricing</td></tr>
-    <tr><td>Lambda Labs <span style="font-size:9px;color:#888;">($5.9B)</span></td><td>"It just works" ML stack, bare metal + VMs</td><td>Research teams, universities</td><td>$2.89</td><td>Multi-cloud, lower entry point</td></tr>
-    <tr><td>CoreWeave <span style="font-size:9px;color:#888;">(IPO $35B)</span></td><td>Largest private GPU fleet, K8s-native, enterprise SLAs</td><td>Large enterprise (Meta, Microsoft)</td><td>$4.25</td><td>Accessible to smaller teams, no gatekeeping</td></tr>
-    <tr><td>FluidStack <span style="font-size:9px;color:#888;">($18B)</span></td><td>100K+ distributed GPUs, volume discounts</td><td>AI labs at scale (Meta, Anthropic)</td><td>$2.50</td><td>Multi-cloud mgmt, lower entry point</td></tr>
-    <tr><td>Vast.ai</td><td>GPU marketplace (Airbnb model), lowest prices</td><td>Cost-optimized researchers, hobbyists</td><td>~$2.00</td><td>Reliability, SLAs, managed experience</td></tr>
-    <tr><td>Modal</td><td>True serverless GPUs, Python-native, zero idle</td><td>Python devs, ML pipelines</td><td>$3.95</td><td>Multi-cloud, not preemptible-only</td></tr>
-    <tr><td>AWS / GCP / Azure</td><td>Broadest ecosystem, enterprise compliance</td><td>Enterprises already on that cloud</td><td>$6.88-12</td><td>2-5x cheaper, no lock-in</td></tr>
-  </tbody>
-</table>
-
-
-</div><!-- /tab-gpu -->
-
-<!-- SANDBOX TAB -->
-<div class="tab-panel" id="tab-sandbox">
-<div id="sandbox"></div>
-
-<div style="background:#111;border-radius:10px;padding:16px 20px;margin-top:14px;">
-  <p style="color:#fff;font-size:13px;font-weight:700;margin-bottom:8px;">What makes Agent Sandbox different</p>
-  <p style="color:#ccc;font-size:12px;margin-bottom:8px;">AI agents need to <em>do things</em> — run code, browse websites, use tools. But you can't let an AI run code on your actual servers (it might break something or access data it shouldn't). A sandbox is a sealed room where the agent can work freely without risk. Today, companies need <strong style="color:#34d399;">three separate sandbox tools</strong>: E2B for running code, BrowserBase for browsing the web, and Daytona for dev environments.</p>
-  <p style="color:#ccc;font-size:12px;margin-bottom:8px;"><strong style="color:#fff;">Why it matters:</strong> Stitching together 3 tools means 3 vendor relationships, 3 billing systems, 3 points of failure, and no unified security model. As agents get more capable (writing code AND browsing AND using tools in one workflow), the duct-tape approach breaks down.</p>
-  <p style="color:#ccc;font-size:12px;margin-bottom:0;"><strong style="color:#fff;">Why nobody else has it:</strong> E2B ($35M, 88% of Fortune 100) only does code execution. BrowserBase ($67M) only does browser isolation. Daytona ($24M) only does dev environments. Anthropic's sandbox only works with Claude. <strong style="color:#34d399;">Nobody offers code + browser + dev env in one sandbox, for any AI model.</strong> Market is early and fragmented — no winner yet. $221B agent TAM by 2035.</p>
-</div>
-
-<div class="product-header product-sandbox">
-  <div class="product-tag">Product 4 — Emerging</div>
-  <h3>Agent Sandbox — Secure Agent Runtime</h3>
-  <p style="font-size: 12px; color: #555; margin-top: 4px;">Isolated sandbox environment &middot; Safe execution of agent tasks &middot; Security guardrails</p>
-</div>
-
-<div class="icp-box">
-  <h3>Agent Sandbox ICP</h3>
-  <p><strong>Company:</strong> AI agent companies needing secure execution for untrusted code (Series A-C) &middot; <strong>Buyer:</strong> AI infra engineers, platform security leads, CTO/VP Eng &middot; <strong>Budget:</strong> $500-5K/mo &middot; <strong>Use cases:</strong> Code sandboxes, browser isolation, multi-tenant agent hosting</p>
-</div>
-
-<div class="vp-box" style="background:#ecfdf5;border-color:#6ee7b7;">
-  <h3 style="color:#065f46;">Value Prop</h3>
-  <p style="color:#065f46;"><strong>Unified sandbox: code + browser + dev environment in one product.</strong> Teams currently stitch together E2B (code) + BrowserBase (browser) + Daytona (dev env). Nobody offers all three. Model-agnostic (not locked to Claude or OpenAI), microVM isolation, SOC 2, zero-cost idle. <strong>$221B agent TAM by 2035.</strong></p>
-</div>
-
-<!-- Sandbox positioning map: X = scope (narrow to universal), Y = agent-specific features -->
-<div class="pos-map" style="height:300px;">
-  <div class="grid-line-h"></div><div class="grid-line-v"></div>
-  <div class="axis-x">Scope (Narrow &rarr; Universal) &rarr;</div>
-  <div class="axis-x-label-l">Single use case</div>
-  <div class="axis-x-label-r">Full agent runtime</div>
-  <div class="axis-y-label-t">Agent-native</div>
-  <div class="axis-y-label-b">Generic infra</div>
-  <!-- dots: left% = scope breadth, top% = agent-specific (low = agent-native) -->
-  <div class="pos-dot neutral" style="left:18%;top:68%;">Riza (code only)</div>
-  <div class="pos-dot threat" style="left:35%;top:18%;">E2B 78ms</div>
-  <div class="pos-dot threat" style="left:48%;top:14%;">Daytona 27ms</div>
-  <div class="pos-dot neutral" style="left:28%;top:28%;">Blaxel &lt;25ms</div>
-  <div class="pos-dot neutral" style="left:42%;top:26%;">Runloop 100ms</div>
-  <div class="pos-dot neutral" style="left:50%;top:40%;">Cloudflare</div>
-  <div class="pos-dot neutral" style="left:22%;top:42%;">BrowserBase $67M</div>
-  <div class="pos-dot neutral" style="left:18%;top:50%;">Steel.dev</div>
-  <div class="pos-dot neutral" style="left:55%;top:55%;">Modal $164M</div>
-  <div class="pos-dot neutral" style="left:38%;top:52%;">CodeSandbox</div>
-  <div class="pos-dot neutral" style="left:52%;top:62%;">Fly.io Sprites</div>
-  <div class="pos-dot neutral" style="left:30%;top:22%;">Anthropic (Claude-only)</div>
-  <div class="pos-dot neutral" style="left:40%;top:48%;">Vercel Sandbox</div>
-  <div class="pos-dot neutral" style="left:35%;top:65%;">Docker Sandboxes</div>
-  <div class="pos-dot cloudsway" style="left:82%;top:16%;">Agent Sandbox</div>
-</div>
-
-<table class="comp-table">
-  <thead><tr><th>Competitor</th><th>Value Prop</th><th>ICP</th><th>Cold Start</th><th>Cloudsway Edge</th></tr></thead>
-  <tbody>
-    <tr class="row-cs"><td>Agent Sandbox</td><td>Universal agent runtime: code + browser + dev env</td><td>Multi-capability agent companies</td><td>TBD</td><td>—</td></tr>
-    <tr><td>E2B <span style="font-size:9px;color:#888;">($35M, 88% F100)</span></td><td>Code interpreter SDK, Firecracker microVMs, open source</td><td>Fortune 100, LangChain/CrewAI devs</td><td>78ms</td><td>Unified (not code-only), browser + dev env</td></tr>
-    <tr><td>Daytona <span style="font-size:9px;color:#888;">($24M, $1M ARR in 3mo)</span></td><td>Fastest cold starts, snapshot/fork/branch</td><td>Coding agent platforms, RL teams</td><td>27ms</td><td>Broader scope, not just dev environments</td></tr>
-    <tr><td>BrowserBase <span style="font-size:9px;color:#888;">($67M, $300M val)</span></td><td>Browser isolation, CAPTCHA solving, session recording</td><td>Web scraping, browser agents</td><td>seconds</td><td>Unified (not browser-only), code execution</td></tr>
-    <tr><td>Modal <span style="font-size:9px;color:#888;">($164M)</span></td><td>Serverless functions + GPU, Python-first</td><td>ML engineers, data pipelines</td><td>sub-sec</td><td>Agent-specific features, not generic compute</td></tr>
-    <tr><td>Cloudflare Sandboxes</td><td>Edge sandboxes, zero-trust, active-CPU billing</td><td>Cloudflare ecosystem devs</td><td>instant</td><td>Not locked to Cloudflare ecosystem</td></tr>
-    <tr><td>Anthropic Sandbox</td><td>First-party Claude agent runtime, Managed Agents API</td><td>Claude-only agent teams</td><td>varies</td><td>Model-agnostic, works with any LLM</td></tr>
-    <tr><td>Blaxel / Runloop / Riza</td><td>Emerging agent-native sandboxes, OpenAI SDK partners</td><td>Agent builders, OpenAI ecosystem</td><td>&lt;10-100ms</td><td>Broader unified scope</td></tr>
-  </tbody>
-</table>
-
-
-</div><!-- /tab-sandbox -->
-
-<!-- SUMMARY TAB -->
-<div class="tab-panel" id="tab-summary">
-<div id="summary"></div>
-<h3 style="font-size:14px;margin-top:8px;">Cross-Product Summary</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th style="min-width:110px;">Product</th>
-      <th>Market Size</th>
-      <th>ICP (One-Liner)</th>
-      <th>Key Differentiator</th>
-      <th>#1 Threat</th>
-      <th>BD Priority</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="color:#0ea5e9;font-weight:700;">SmartSearch</td>
-      <td>Narrowing (consolidation)</td>
-      <td>AI startups building RAG/agents, Seed-B, 10-200 ppl</td>
-      <td>Only API with authority scoring</td>
-      <td>Tavily (ecosystem) + You.com (same price)</td>
-      <td style="color:#0ea5e9;font-weight:700;">P0 — Wedge</td>
-    </tr>
-    <tr>
-      <td style="color:#7c3aed;font-weight:700;">Skyrouter</td>
-      <td>$14B &rarr; $60B by 2034</td>
-      <td>Mid-market AI companies running 3+ LLM providers</td>
-      <td>Coverage + routing + governance combined</td>
-      <td>OpenRouter ($50M ARR, $1.3B val)</td>
-      <td style="color:#7c3aed;font-weight:600;">P1 — Upsell</td>
-    </tr>
-    <tr>
-      <td style="color:#d97706;font-weight:700;">GPU Cloud</td>
-      <td>$7.4B &rarr; $26B by 2031</td>
-      <td>Small-mid AI startups, ML teams, 5-50 ppl</td>
-      <td>Multi-cloud orchestration, $150/mo entry</td>
-      <td>RunPod (DX) + CoreWeave (scale)</td>
-      <td style="color:#d97706;font-weight:600;">P2 — Upsell</td>
-    </tr>
-    <tr>
-      <td style="color:#059669;font-weight:700;">Agent Sandbox</td>
-      <td>Early/emerging</td>
-      <td>Agent companies needing secure execution</td>
-      <td>Universal agent runtime (not just code/browser)</td>
-      <td>E2B (code) + BrowserBase (browser)</td>
-      <td style="color:#059669;font-weight:600;">P3 — Future</td>
-    </tr>
-  </tbody>
-</table>
-
-<div style="background:#111;border-radius:10px;padding:20px 24px;margin:20px 0;">
-  <h3 style="color:#fff;font-size:14px;margin:0 0 10px;">The Full-Stack Play</h3>
-  <p style="color:#ccc;font-size:12.5px;margin-bottom:8px;">SmartSearch is the <strong style="color:#0ea5e9;">wedge</strong> — it's where Cloudsway has the clearest differentiation (authority scoring) and the easiest land. Once a customer is using SmartSearch for their agent's web data, the upsell path is natural:</p>
-  <div style="display:flex;align-items:center;gap:12px;margin:14px 0;">
-    <div style="background:#0ea5e9;color:#fff;padding:8px 14px;border-radius:6px;font-size:11px;font-weight:700;text-align:center;">SmartSearch<br><span style="font-weight:400;font-size:10px;">Search API</span></div>
-    <div style="color:#666;font-size:16px;">&rarr;</div>
-    <div style="background:#7c3aed;color:#fff;padding:8px 14px;border-radius:6px;font-size:11px;font-weight:700;text-align:center;">Skyrouter<br><span style="font-weight:400;font-size:10px;">Model routing</span></div>
-    <div style="color:#666;font-size:16px;">&rarr;</div>
-    <div style="background:#d97706;color:#fff;padding:8px 14px;border-radius:6px;font-size:11px;font-weight:700;text-align:center;">GPU Cloud<br><span style="font-weight:400;font-size:10px;">Compute</span></div>
-    <div style="color:#666;font-size:16px;">&rarr;</div>
-    <div style="background:#059669;color:#fff;padding:8px 14px;border-radius:6px;font-size:11px;font-weight:700;text-align:center;">Agent Sandbox<br><span style="font-weight:400;font-size:10px;">Runtime</span></div>
+<div class="two-col">
+  <div class="pillar pillar-secondary">
+    <div class="pillar-label">Secondary — Start conversations</div>
+    <h3>Agent Frameworks & Platforms</h3>
+    <p>LangChain, LlamaIndex, Cursor, Windsurf — their developers need a search provider. One integration = thousands of agents using Cloudsway. MCP server already shipped.</p>
   </div>
-  <p style="color:#ccc;font-size:12px;margin-top:10px;">Each product deepens the relationship. A customer using all four is running their entire AI stack on Cloudsway — from data acquisition (SmartSearch) to model selection (Skyrouter) to compute (GPU Cloud) to execution (Agent Sandbox). That's a $10K-100K+/month account vs. a $500/month search API customer.</p>
+  <div class="pillar pillar-secondary">
+    <div class="pillar-label">Secondary — Plant seeds</div>
+    <h3>Tavily Displacement</h3>
+    <p>Post-acquisition instability creates an opening. Offer migration support + benchmark comparison. Active outreach from Day 1 to known Tavily customers.</p>
+  </div>
 </div>
 
-</div><!-- /tab-summary -->
-</div></div><!-- /s-intel -->
+<!-- GROWTH CHANNELS -->
+<h2>3. Four Growth Channels</h2>
+
+<p style="font-size: 12px; color: #666; margin-bottom: 14px;">Every successful developer infrastructure company uses the same four channels. Each builds on the others — outbound opens doors, events build trust, hackathons create adoption, partnerships scale distribution.</p>
+
+<div class="two-col">
+  <div class="card" style="border-left: 3px solid #0ea5e9;">
+    <h3 style="color: #0ea5e9;">A. Direct Outbound</h3>
+    <p>Vertical-specific outreach to high-stakes AI companies + Tavily displacement. Signal-based, not spray-and-pray.</p>
+  </div>
+  <div class="card" style="border-left: 3px solid #7c3aed;">
+    <h3 style="color: #7c3aed;">B. Conferences & Events</h3>
+    <p>Attend AI conferences. Host free dinners and side events for target buyers. Intimate > expensive booths. Relationships over swag.</p>
+  </div>
+  <div class="card" style="border-left: 3px solid #f59e0b;">
+    <h3 style="color: #f59e0b;">C. Hackathons</h3>
+    <p>Sponsor and host hackathons with SmartSearch API credits. Devs build with Cloudsway → sticky adoption. Hackathons convert at 5–33% vs. 1% for traditional marketing.</p>
+  </div>
+  <div class="card" style="border-left: 3px solid #10b981;">
+    <h3 style="color: #10b981;">D. Partnerships & Co-Marketing</h3>
+    <p>Integration partnerships with agent frameworks (LangChain, LlamaIndex). Joint blog posts, co-marketed launches, shared developer audiences.</p>
+  </div>
+</div>
+
+<!-- SECTION 4: TIMELINE -->
+<h2>4. First 90 Days</h2>
+
+<div class="timeline">
+  <div class="timeline-block">
+    <h3>Day 1–30: Foundation</h3>
+    <ul>
+      <li><span style="color:#0ea5e9; font-weight:600;">A</span> Deep-dive on product, API, positioning</li>
+      <li><span style="color:#0ea5e9; font-weight:600;">A</span> Build the 100-query benchmark workflow</li>
+      <li><span style="color:#0ea5e9; font-weight:600;">A</span> Draft vertical-specific outreach sequences</li>
+      <li><span style="color:#0ea5e9; font-weight:600;">A</span> Map decision-makers at top 15 accounts</li>
+      <li><span style="color:#0ea5e9; font-weight:600;">A</span> First 5 Tavily customer conversations</li>
+      <li><span style="color:#7c3aed; font-weight:600;">B</span> Scout Q3/Q4 AI conferences — shortlist 2–3 for Cloudsway presence</li>
+      <li><span style="color:#f59e0b; font-weight:600;">C</span> Identify 3–5 hackathons to sponsor (lablab.ai, Devpost, AngelHack)</li>
+      <li><span style="color:#f59e0b; font-weight:600;">C</span> Design "Cloudsway Bounty" — API credits + prizes for builders</li>
+    </ul>
+  </div>
+  <div class="timeline-block">
+    <h3>Day 31–60: Open Doors</h3>
+    <ul>
+      <li><span style="color:#0ea5e9; font-weight:600;">A</span> 20+ personalized outreaches to vertical AI targets</li>
+      <li><span style="color:#0ea5e9; font-weight:600;">A</span> Publish first vertical benchmark (legal: Cloudsway vs. raw search)</li>
+      <li><span style="color:#7c3aed; font-weight:600;">B</span> Attend first conference — host a free dinner or side meetup for target buyers</li>
+      <li><span style="color:#7c3aed; font-weight:600;">B</span> Build conference contact pipeline — warm intros, follow-ups booked</li>
+      <li><span style="color:#f59e0b; font-weight:600;">C</span> Sponsor first hackathon — provide SmartSearch API credits, help devs integrate on-site</li>
+      <li><span style="color:#10b981; font-weight:600;">D</span> Start LangChain / LlamaIndex partnership conversations</li>
+      <li><span style="color:#10b981; font-weight:600;">D</span> Launch co-marketing with 1 partner (joint blog post / integration guide)</li>
+      <li>Weekly pipeline review with team</li>
+    </ul>
+  </div>
+  <div class="timeline-block secondary">
+    <h3>Day 61–90: Build Momentum</h3>
+    <ul>
+      <li><span style="color:#0ea5e9; font-weight:600;">A</span> First POC conversations underway</li>
+      <li><span style="color:#0ea5e9; font-weight:600;">A</span> Expand outreach to second wave of targets</li>
+      <li><span style="color:#7c3aed; font-weight:600;">B</span> Second conference or host a Cloudsway-branded dinner event</li>
+      <li><span style="color:#7c3aed; font-weight:600;">B</span> Conference follow-up pipeline — who we met, next steps</li>
+      <li><span style="color:#f59e0b; font-weight:600;">C</span> Host a Cloudsway mini-hackathon — "Build a trustworthy AI agent in 48 hours"</li>
+      <li><span style="color:#f59e0b; font-weight:600;">C</span> Collect case studies from hackathon winners → sales collateral</li>
+      <li><span style="color:#10b981; font-weight:600;">D</span> Partnership conversations progressing — second integration underway</li>
+      <li>Market intel report: what resonates, what doesn't</li>
+      <li>Recommend next phase based on learnings</li>
+    </ul>
+  </div>
+</div>
+
+<!-- PRECEDENT -->
+<div style="margin-top: 20px;">
+  <h3 style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #888; margin-bottom: 10px;">The Proven Playbook — Companies Using These Exact Channels</h3>
+  <table>
+    <tr>
+      <th>Company</th>
+      <th>What They Do</th>
+      <th>Channels Used</th>
+      <th>Result</th>
+    </tr>
+    <tr>
+      <td>Exa AI</td>
+      <td>AI-native search API for LLMs and agents</td>
+      <td><span style="color:#f59e0b; font-weight:600;">C</span> <span style="color:#10b981; font-weight:600;">D</span> Hackathon sponsorship + API credits + on-site engineers + 30+ co-marketing partners</td>
+      <td>$700M valuation, hundreds of thousands of devs</td>
+    </tr>
+    <tr>
+      <td>Supabase</td>
+      <td>Open-source Firebase alternative (database, auth, storage)</td>
+      <td><span style="color:#7c3aed; font-weight:600;">B</span> <span style="color:#f59e0b; font-weight:600;">C</span> <span style="color:#10b981; font-weight:600;">D</span> Runs own hackathons + sponsors Vercel/YC + conference presence + free dinners at dev events</td>
+      <td>#1 developer growth channel, 80K+ GitHub stars</td>
+    </tr>
+    <tr>
+      <td>Tavily</td>
+      <td>Agentic search API optimized for LLM workflows</td>
+      <td><span style="color:#10b981; font-weight:600;">D</span> Organic developer-led growth through LangChain/agent ecosystem + community events</td>
+      <td>3M monthly SDK downloads, 1M+ devs → acquired for $275M</td>
+    </tr>
+    <tr>
+      <td>OpenRouter</td>
+      <td>Unified API gateway for 400+ AI models</td>
+      <td><span style="color:#7c3aed; font-weight:600;">B</span> <span style="color:#10b981; font-weight:600;">D</span> Conference speaking (AI Conf SF, AI Council) + Exa partnership (73M queries)</td>
+      <td>$50M ARR, 4.2M users, $1.3B valuation</td>
+    </tr>
+  </table>
+  <p style="font-size: 11px; color: #666;">Every company here used a mix of these channels. None relied on outbound alone. Cloudsway needs someone in the US running this full playbook.</p>
+</div>
+
+<!-- SECTION 4 -->
+<h2>5. Working Together</h2>
+
+<div class="engagement-grid">
+  <div>
+    <div class="eng-item">
+      <div class="eng-label">Commitment</div>
+      <div class="eng-value">Part-time, 15–20 hrs/week</div>
+    </div>
+    <div class="eng-item">
+      <div class="eng-label">Term</div>
+      <div class="eng-value">6-month engagement</div>
+      <div class="eng-note">With monthly check-ins and quarterly review</div>
+    </div>
+    <div class="eng-item">
+      <div class="eng-label">Start</div>
+      <div class="eng-value">Ready to begin immediately</div>
+    </div>
+  </div>
+  <div>
+    <div class="eng-item">
+      <div class="eng-label">What You Get Each Month</div>
+      <div class="eng-value" style="font-size: 12px; line-height: 1.6;">
+        Pipeline report — conversations opened, status, next steps<br>
+        Market intel — what messaging resonates, buyer objections, competitive signals<br>
+        Relationship map — who I've talked to, warmth level, follow-up plan
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="callout">
+  <p><strong>What I've already done:</strong> Full competitive analysis across all four products (SmartSearch, Skyrouter, GPU Cloud, Agent Sandbox). 79 target accounts mapped. Vertical-specific messaging drafted. I'm not starting from zero — I'm ready to start conversations.</p>
+</div>
 
 <div class="footer">
   <span>Haruka T. — US Growth & BD Proposal for Cloudsway</span>
-  <span>May 2026 — Confidential</span>
+  <span>June 2026 — Confidential</span>
 </div>
-
-<script>
-function toggleSection(header) {
-  header.parentElement.classList.toggle('open');
-}
-function switchTab(btn) {
-  const bar = btn.parentElement;
-  bar.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  const container = bar.parentElement;
-  container.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-  container.querySelector('#tab-' + btn.dataset.tab).classList.add('active');
-}
-// Smooth scroll for nav links + highlight active
-document.querySelectorAll('.sticky-nav a').forEach(a => {
-  a.addEventListener('click', e => {
-    e.preventDefault();
-    const id = a.getAttribute('href').slice(1);
-    const el = document.getElementById(id);
-    if (el) {
-      el.classList.add('open');
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      document.querySelectorAll('.sticky-nav a').forEach(x => x.classList.remove('active'));
-      a.classList.add('active');
-    }
-  });
-});
-// Highlight nav on scroll
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const id = entry.target.id;
-      document.querySelectorAll('.sticky-nav a').forEach(a => {
-        a.classList.toggle('active', a.getAttribute('href') === '#' + id);
-      });
-    }
-  });
-}, { rootMargin: '-80px 0px -60% 0px' });
-document.querySelectorAll('.section[id]').forEach(s => observer.observe(s));
-</script>
 
 </body>
 </html>
